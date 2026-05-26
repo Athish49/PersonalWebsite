@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" width="1440" height="820">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="18" cy="18" r="0.9" fill="#1e2535" opacity="0.9"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="28%" r="55%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+    <linearGradient id="card3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="card4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="1440" height="820" fill="#0c0e14"/>
+  <rect width="1440" height="820" fill="url(#dots)"/>
+  <rect width="1440" height="820" fill="url(#glow)"/>
+
+  <!-- ── NAV ─────────────────────────────────────────── -->
+  <rect width="1440" height="62" fill="#111318"/>
+  <rect y="62" width="1440" height="1" fill="#1f2535"/>
+
+  <!-- Logo mark -->
+  <rect x="36" y="16" width="30" height="30" rx="7" fill="#f97316"/>
+  <text x="51" y="36" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#fff">B</text>
+
+  <!-- Wordmark -->
+  <text x="76" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">BrainScope</text>
+  <text x="170" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#f97316">N8N</text>
+
+  <!-- Nav links -->
+  <text x="510" y="37" font-family="-apple-system, Arial, sans-serif" font-size="13" fill="#848d97">Pipeline</text>
+  <text x="590" y="37" font-family="-apple-system, Arial, sans-serif" font-size="13" fill="#848d97">Papers</text>
+  <text x="664" y="37" font-family="-apple-system, Arial, sans-serif" font-size="13" fill="#848d97">Docs</text>
+  <text x="728" y="37" font-family="-apple-system, Arial, sans-serif" font-size="13" fill="#848d97">API</text>
+
+  <!-- CTA button -->
+  <rect x="1330" y="18" width="74" height="28" rx="6" fill="#f97316"/>
+  <text x="1367" y="36" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="12" font-weight="600" fill="#fff">Try it</text>
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+
+  <!-- Badge -->
+  <rect x="576" y="100" width="288" height="28" rx="14" fill="#17202e" stroke="#252f42" stroke-width="1"/>
+  <circle cx="598" cy="114" r="4" fill="#f97316"/>
+  <text x="610" y="118" font-family="-apple-system, Arial, sans-serif" font-size="11" font-weight="600" fill="#f97316" letter-spacing="0.07em">BCI RESEARCH PIPELINE · AUTOMATED</text>
+
+  <!-- Headline: three lines -->
+  <text x="720" y="202" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="800" fill="#e6edf3" letter-spacing="-2">Discover.</text>
+  <text x="720" y="288" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="800" fill="#e6edf3" letter-spacing="-2">Index.</text>
+  <text x="720" y="374" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="800" fill="#f97316" letter-spacing="-2">Understand.</text>
+
+  <!-- Subtext -->
+  <text x="720" y="418" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="15" fill="#848d97">End-to-end n8n pipeline that scrapes, chunks, embeds, and</text>
+  <text x="720" y="440" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="15" fill="#848d97">queries BCI literature via pgvector + LLMs.</text>
+
+  <!-- Buttons -->
+  <rect x="560" y="464" width="158" height="40" rx="8" fill="#f97316"/>
+  <text x="639" y="489" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="13" font-weight="600" fill="#fff">Open Pipeline →</text>
+
+  <rect x="730" y="464" width="150" height="40" rx="8" fill="transparent" stroke="#2a3348" stroke-width="1.5"/>
+  <text x="805" y="489" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="13" fill="#848d97">View Docs</text>
+
+  <!-- ── PIPELINE CARDS ─────────────────────────────── -->
+
+  <!-- Connector lines between cards -->
+  <!-- Line 1→2 -->
+  <line x1="394" y1="666" x2="486" y2="666" stroke="#2a3348" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="486,661 498,666 486,671" fill="#2a3348"/>
+  <!-- Line 2→3 -->
+  <line x1="644" y1="666" x2="736" y2="666" stroke="#2a3348" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="736,661 748,666 736,671" fill="#2a3348"/>
+  <!-- Line 3→4 -->
+  <line x1="894" y1="666" x2="986" y2="666" stroke="#2a3348" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="986,661 998,666 986,671" fill="#2a3348"/>
+
+  <!-- Card 1: Paper Sources -->
+  <rect x="144" y="616" width="250" height="100" rx="12" fill="#111827" stroke="#1e2d44" stroke-width="1"/>
+  <rect x="144" y="616" width="250" height="4" rx="2" fill="url(#card1)"/>
+  <text x="162" y="648" font-family="-apple-system, Arial, sans-serif" font-size="10" font-weight="600" fill="#60a5fa" letter-spacing="0.08em">01  SOURCE</text>
+  <text x="162" y="668" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="14" font-weight="700" fill="#e6edf3">Paper Scraper</text>
+  <text x="162" y="686" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">PubMed · arXiv · bioRxiv</text>
+  <text x="162" y="704" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Automated ingestion</text>
+
+  <!-- Card 2: n8n pipeline -->
+  <rect x="498" y="616" width="250" height="100" rx="12" fill="#111827" stroke="#1e2d44" stroke-width="1"/>
+  <rect x="498" y="616" width="250" height="4" rx="2" fill="url(#card2)"/>
+  <text x="516" y="648" font-family="-apple-system, Arial, sans-serif" font-size="10" font-weight="600" fill="#fb923c" letter-spacing="0.08em">02  ORCHESTRATE</text>
+  <text x="516" y="668" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="14" font-weight="700" fill="#e6edf3">n8n Workflow</text>
+  <text x="516" y="686" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Chunk · Embed · Route</text>
+  <text x="516" y="704" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Zero-code automation</text>
+
+  <!-- Card 3: pgvector -->
+  <rect x="752" y="616" width="250" height="100" rx="12" fill="#111827" stroke="#1e2d44" stroke-width="1"/>
+  <rect x="752" y="616" width="250" height="4" rx="2" fill="url(#card3)"/>
+  <text x="770" y="648" font-family="-apple-system, Arial, sans-serif" font-size="10" font-weight="600" fill="#a78bfa" letter-spacing="0.08em">03  STORE</text>
+  <text x="770" y="668" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="14" font-weight="700" fill="#e6edf3">pgvector DB</text>
+  <text x="770" y="686" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Semantic vector index</text>
+  <text x="770" y="704" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Cosine similarity search</text>
+
+  <!-- Card 4: LLM -->
+  <rect x="1006" y="616" width="250" height="100" rx="12" fill="#111827" stroke="#1e2d44" stroke-width="1"/>
+  <rect x="1006" y="616" width="250" height="4" rx="2" fill="url(#card4)"/>
+  <text x="1024" y="648" font-family="-apple-system, Arial, sans-serif" font-size="10" font-weight="600" fill="#34d399" letter-spacing="0.08em">04  SYNTHESIZE</text>
+  <text x="1024" y="668" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="14" font-weight="700" fill="#e6edf3">LLM Synthesis</text>
+  <text x="1024" y="686" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">GPT-4 · Claude · Gemini</text>
+  <text x="1024" y="704" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Grounded Q&amp;A answers</text>
+
+  <!-- Stats bar at bottom -->
+  <rect y="760" width="1440" height="60" fill="#0d1117"/>
+  <rect y="760" width="1440" height="1" fill="#1f2535"/>
+
+  <text x="252" y="796" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="20" font-weight="800" fill="#e6edf3">12K+</text>
+  <text x="252" y="812" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Papers indexed</text>
+
+  <text x="580" y="796" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="20" font-weight="800" fill="#e6edf3">4</text>
+  <text x="580" y="812" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Pipeline stages</text>
+
+  <text x="860" y="796" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="20" font-weight="800" fill="#e6edf3">&lt;2s</text>
+  <text x="860" y="812" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Query latency</text>
+
+  <text x="1188" y="796" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="20" font-weight="800" fill="#e6edf3">100%</text>
+  <text x="1188" y="812" text-anchor="middle" font-family="-apple-system, Arial, sans-serif" font-size="11" fill="#848d97">Open source</text>
+</svg>
