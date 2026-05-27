@@ -617,8 +617,8 @@ body.loaded .scroll-cue { opacity: 1; }
 .work-card {
     flex: 0 0 auto;
     width: clamp(360px, 34vw, 500px);
-    height: clamp(460px, 82vh, 700px);
-    padding: 36px;
+    height: clamp(460px, 85vh, 700px);
+    padding: 30px 36px 30px 36px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -669,7 +669,7 @@ body.loaded .scroll-cue { opacity: 1; }
     text-transform: uppercase;
     letter-spacing: .14em;
     color: var(--muted);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 .work-num { color: var(--accent); font-weight: 600; }
 
@@ -702,7 +702,7 @@ body.loaded .scroll-cue { opacity: 1; }
     text-transform: uppercase;
     letter-spacing: .12em;
     color: var(--accent);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 /* Structured item list inside work cards */
 .work-items {
@@ -713,7 +713,7 @@ body.loaded .scroll-cue { opacity: 1; }
     flex-direction: column;
 }
 .work-item {
-    padding: 7px 0;
+    padding: 6px 0;
     border-bottom: 1px solid var(--glass-border);
 }
 .work-item:first-child { border-top: 1px solid var(--glass-border); }
