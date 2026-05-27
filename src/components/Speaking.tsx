@@ -1,6 +1,18 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const PROJECTS = [
+type Project = {
+  id: string
+  name: string
+  tagline: string
+  tags: string[]
+  url: string
+  urlLabel: string
+  bg: string
+  screenshot?: string
+  status: 'live' | 'building'
+}
+
+const PROJECTS: Project[] = [
   {
     id: 'fda',
     name: 'FDACompliance',
@@ -10,6 +22,7 @@ const PROJECTS = [
     urlLabel: 'fda-compliance.vercel.app',
     bg: 'linear-gradient(145deg, #1a3a6b 0%, #0d5ea6 60%, #1a7abf 100%)',
     screenshot: '/images/screenshot-fda.png',
+    status: 'live',
   },
   {
     id: 'neuro',
@@ -20,6 +33,7 @@ const PROJECTS = [
     urlLabel: 'alzheimerskg.vercel.app',
     bg: 'linear-gradient(145deg, #2d1b69 0%, #6b21a8 60%, #9333ea 100%)',
     screenshot: '/images/screenshot-neuro.png',
+    status: 'live',
   },
   {
     id: 'resolvly',
@@ -30,6 +44,7 @@ const PROJECTS = [
     urlLabel: 'resolvly.vercel.app',
     bg: 'linear-gradient(145deg, #0f4c3a 0%, #0f766e 60%, #14b8a6 100%)',
     screenshot: '/images/screenshot-resolvly.png',
+    status: 'live',
   },
   {
     id: 'brainscope',
@@ -40,29 +55,78 @@ const PROJECTS = [
     urlLabel: 'brainscope.dev',
     bg: 'linear-gradient(145deg, #7c2d12 0%, #c2410c 60%, #f97316 100%)',
     screenshot: '/images/screenshot-brainscope.svg',
+    status: 'live',
+  },
+  {
+    id: 'citadel',
+    name: 'ProjectCitadel',
+    tagline: "Resilient agentic AI hardened against 77+ attack vectors — prompt injection, RAG poisoning, adversarial inputs, and beyond.",
+    tags: ['AGENTIC AI', 'AI SECURITY', 'RED TEAM'],
+    url: '#',
+    urlLabel: 'projectcitadel.dev',
+    bg: 'linear-gradient(145deg, #1a0505 0%, #7f1d1d 60%, #dc2626 100%)',
+    status: 'building',
+  },
+  {
+    id: 'chambers',
+    name: 'Chambers',
+    tagline: "Multi-agent AI debate for legal cases — grounded adversarial reasoning over law, not shallow RAG retrieval.",
+    tags: ['MULTI-AGENT', 'LEGAL AI', 'DEBATE'],
+    url: '#',
+    urlLabel: 'chambers.law',
+    bg: 'linear-gradient(145deg, #0c1445 0%, #1e3a8a 60%, #3b82f6 100%)',
+    status: 'building',
+  },
+  {
+    id: 'lucid-invoice',
+    name: 'Lucid Invoice',
+    tagline: "VLM-powered invoice processing for AP teams — ditch legacy OCR pipelines and go multimodal-first.",
+    tags: ['VLM', 'PROCUREMENT', 'AP AUTOMATION'],
+    url: '#',
+    urlLabel: 'lucidinvoice.ai',
+    bg: 'linear-gradient(145deg, #052e16 0%, #166534 60%, #16a34a 100%)',
+    status: 'building',
+  },
+  {
+    id: 'meetmind',
+    name: 'MeetMindAI',
+    tagline: "Your AI meeting attendee — extracts to-dos, follow-up emails, Jira tickets, and summaries from call transcripts.",
+    tags: ['MEETINGS AI', 'TRANSCRIPT', 'AUTOMATION'],
+    url: 'https://meetmindai-beta.vercel.app/',
+    urlLabel: 'meetmindai-beta.vercel.app',
+    bg: 'linear-gradient(145deg, #2e1065 0%, #6d28d9 60%, #a855f7 100%)',
+    screenshot: '/images/screenshot-meetmindai.png',
+    status: 'live',
   },
 ]
 
 const INTERVAL_MS = 5000
 
-function BrowserMock({ project, size }: { project: typeof PROJECTS[0]; size: 'lg' | 'sm' }) {
+function BrowserMock({ project, size }: { project: Project; size: 'lg' | 'sm' }) {
+  const isBuilding = project.status === 'building'
   return (
     <div className={`proj-browser proj-browser--${size}`}>
       <div className="proj-chrome">
         <span className="proj-dots"><span /><span /><span /></span>
-        <span className="proj-url-bar">{project.urlLabel}</span>
-        <span className="proj-live-chip">
-          <span className="proj-live-dot" />LIVE
-        </span>
+        <span className="proj-url-bar">{isBuilding ? 'coming soon…' : project.urlLabel}</span>
+        {isBuilding ? (
+          <span className="proj-building-chip">
+            <span className="proj-building-dot" />BUILDING
+          </span>
+        ) : (
+          <span className="proj-live-chip">
+            <span className="proj-live-dot" />LIVE
+          </span>
+        )}
       </div>
-      {project.screenshot ? (
+      {project.screenshot && !isBuilding ? (
         <div className="proj-screen proj-screen--shot">
           <img src={project.screenshot} alt={`${project.name} landing page`} />
         </div>
       ) : (
         <div className="proj-screen" style={{ background: project.bg }}>
           <span className="proj-screen-name">{project.name}</span>
-          <span className="proj-screen-url">{project.urlLabel}</span>
+          <span className="proj-screen-url">{isBuilding ? 'in development' : project.urlLabel}</span>
         </div>
       )}
     </div>
@@ -88,6 +152,7 @@ export default function Speaking() {
 
   const featured = PROJECTS[active]
   const thumbs = PROJECTS.filter((_, i) => i !== active)
+  const isBuilding = featured.status === 'building'
 
   const openFeatured = () => {
     if (featured.url !== '#') window.open(featured.url, '_blank', 'noopener,noreferrer')
@@ -98,7 +163,7 @@ export default function Speaking() {
       <span className="eyebrow">
         <span className="eyebrow-num">05</span>
         <span className="eyebrow-line" />
-        <span>Projects · In Production</span>
+        <span>Projects</span>
       </span>
       <h2 className="speaking-headline">
         Built for <span className="serif italic">curiosity</span>.<br />
@@ -109,22 +174,31 @@ export default function Speaking() {
       <div key={active} className="proj-panel">
         <div className="proj-panel-left">
           <span className="proj-badge">
-            <span className="proj-live-dot" />
-            Featured · Live Now
+            {isBuilding ? (
+              <><span className="proj-building-dot" />Featured · In Development</>
+            ) : (
+              <><span className="proj-live-dot" />Featured · Live Now</>
+            )}
           </span>
           <h3 className="proj-name">{featured.name}</h3>
           <p className="proj-tagline">{featured.tagline}</p>
           <div className="proj-tags">
             {featured.tags.map(t => <span key={t} className="proj-tag">{t}</span>)}
           </div>
-          <a
-            href={featured.url !== '#' ? featured.url : undefined}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="proj-cta"
-          >
-            {featured.urlLabel} <span className="proj-cta-arr">↗</span>
-          </a>
+          {isBuilding ? (
+            <span className="proj-cta proj-cta--building">
+              Coming Soon
+            </span>
+          ) : (
+            <a
+              href={featured.url !== '#' ? featured.url : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="proj-cta"
+            >
+              {featured.urlLabel} <span className="proj-cta-arr">↗</span>
+            </a>
+          )}
         </div>
 
         <div className="proj-panel-right">
@@ -132,10 +206,10 @@ export default function Speaking() {
             className="proj-browser-wrap"
             onClick={openFeatured}
             onKeyDown={e => e.key === 'Enter' && openFeatured()}
-            role={featured.url !== '#' ? 'button' : undefined}
-            tabIndex={featured.url !== '#' ? 0 : undefined}
+            role={!isBuilding && featured.url !== '#' ? 'button' : undefined}
+            tabIndex={!isBuilding && featured.url !== '#' ? 0 : undefined}
             aria-label={`Open ${featured.name}`}
-            style={{ cursor: featured.url !== '#' ? 'pointer' : 'default' }}
+            style={{ cursor: !isBuilding && featured.url !== '#' ? 'pointer' : 'default' }}
           >
             <BrowserMock project={featured} size="lg" />
           </div>
@@ -158,7 +232,10 @@ export default function Speaking() {
               <BrowserMock project={p} size="sm" />
               <div className="proj-thumb-foot">
                 <span className="proj-thumb-name">{p.name}</span>
-                <span className="proj-thumb-arr">↗</span>
+                {p.status === 'building'
+                  ? <span className="proj-building-pill">Building</span>
+                  : <span className="proj-thumb-arr">↗</span>
+                }
               </div>
             </div>
           )
