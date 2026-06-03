@@ -46,15 +46,15 @@ export default function Hero() {
         <div className="hero-meta-bottom">
           <div className="hero-role">
             <span className="kicker">Role</span>
-            <span>AI Engineer &amp; MS Data Science</span>
+            <span>Agentic AI &amp; RAG Systems</span>
           </div>
           <div className="hero-where">
             <span className="kicker">Where</span>
-            <span>San Jose, CA</span>
+            <span>San Jose · Open to Relocate</span>
           </div>
           <div className="hero-since">
             <span className="kicker">Since</span>
-            <span>2021</span>
+            <span>2+ yrs in production AI</span>
           </div>
         </div>
 

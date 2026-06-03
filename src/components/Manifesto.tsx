@@ -8,12 +8,12 @@ export default function Manifesto() {
       </span>
 
       <p className="manifesto-text reveal">
-        I believe AI earns its worth only when it <em className="serif">actually ships</em>. The best model in the world means nothing if it doesn't solve a real problem for a real person — and I'm here to <span className="accent">bridge that gap</span>.
+        Most companies don't have an AI problem. They have a translation problem. Closing that gap takes knowing the stack, the business, and how to ship. That's <span className="accent"><em className="serif">exactly what I bring</em>.</span>
       </p>
 
       <div className="manifesto-sig reveal">
         <span className="sig-line" />
-        <span>Athish, signing off — from a kid who grew up debugging code and never really stopped.</span>
+        <span>Athish, here to make intelligence useful, not just impressive.</span>
       </div>
     </section>
   )

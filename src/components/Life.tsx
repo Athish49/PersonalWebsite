@@ -20,10 +20,10 @@ export default function Life() {
             curious.
           </h2>
           <p>
-            You'll find me reading AI papers, hacking on side projects, and occasionally breaking things in production just to understand why. I believe in learning by building — every bug in prod taught me more than any lecture.
+            You'll find me reading AI papers, hacking on side projects, and going deep on problems until they're actually solved. I believe in learning by building. Every system I've shipped has taught me more than any lecture ever could.
           </p>
           <p>
-            I grew up in India, built my AI foundations at <strong>Vellore Institute of Technology</strong>, shipped ML systems in Mumbai, and now I'm pursuing my <strong>M.S. in Data Science at Indiana University Bloomington</strong> — currently in San Jose as an AI Engineer.
+            I grew up in India, built my AI foundations at <strong>Vellore Institute of Technology,</strong> and shipped ML systems across procurement, fintech, and biomedical fields. I recently completed my <strong>M.S. in Data Science at Indiana University Bloomington,</strong> and I'm based in San Jose, ready to bring everything I've built towards the next hard problem.
           </p>
         </div>
       </div>

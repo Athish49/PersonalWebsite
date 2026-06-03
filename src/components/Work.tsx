@@ -12,10 +12,10 @@ export default function Work() {
               <span>Experience</span>
             </span>
             <h2 className="work-headline">
-              What I built.<br />
-              <span className="serif italic">One thread — AI first.</span>
+            Real problems.<br />
+              <span className="serif italic">Real systems. Real impact.</span>
             </h2>
-            <p className="work-sub">From intern to founding engineer — shipping production AI systems across procurement, biomedical research, and fintech. Drag or scroll.</p>
+            <p className="work-sub">Five roles. Three industries. Every project shipped to production and measured by outcomes. <br />Drag or scroll.</p>
             <div className="work-arrow" aria-hidden="true">
               <span>→</span>
             </div>
@@ -33,17 +33,17 @@ export default function Work() {
             <ul className="work-items">
               <li className="work-item">
                 <div className="work-item-row">
-                  <span className="work-item-title"><span className="work-item-dot" />Research Platform</span>
-                  <span className="work-item-badge">1 inbox</span>
+                  <span className="work-item-title"><span className="work-item-dot" />Agentic Research Platform</span>
+                  <span className="work-item-badge">Multi-agent architecture</span>
                 </div>
-                <p className="work-item-desc">One inbox for an entire research field.</p>
+                <p className="work-item-desc">Inbox style platform for tracking research advances.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Ingestion Pipelines</span>
-                  <span className="work-item-badge">0 manual ops</span>
+                  <span className="work-item-badge">10,000+ papers tracked daily</span>
                 </div>
-                <p className="work-item-desc">Daily paper harvesting — fully automated.</p>
+                <p className="work-item-desc">Paper harvesting from scientific and bibliographic databases.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
@@ -57,10 +57,10 @@ export default function Work() {
                   <span className="work-item-title"><span className="work-item-dot" />Personalized SLMs</span>
                   <span className="work-item-badge">1 model / user</span>
                 </div>
-                <p className="work-item-desc">Per-user fine-tuned model for personalized Q&A.</p>
+                <p className="work-item-desc">Per-user fine-tuned on your own reading history.</p>
               </li>
             </ul>
-            <span className="work-link work-link--quiet">San Jose, CA · 2025</span>
+            <span className="work-link work-link--quiet">San Jose, CA</span>
           </article>
 
           {/* 02 — GEP Worldwide Associate DS */}
@@ -76,47 +76,47 @@ export default function Work() {
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />AI Bot Builder</span>
-                  <span className="work-item-badge">10x faster deploy</span>
+                  <span className="work-item-badge">Sprint cycles → 2 hours</span>
                 </div>
-                <p className="work-item-desc">Custom AI chatbots deployed in under 2 hours.</p>
+                <p className="work-item-desc">Low-code platform to prototype and deploy custom AI chatbots.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Spend Forecasting</span>
-                  <span className="work-item-badge">−12% unplanned</span>
+                  <span className="work-item-badge">~12% cost savings</span>
                 </div>
                 <p className="work-item-desc">ML procurement predictions to cut client overspend.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Clause Recommender</span>
-                  <span className="work-item-badge">−40% turnaround</span>
+                  <span className="work-item-badge">~40% turnaround time ↓</span>
                 </div>
-                <p className="work-item-desc">Auto-suggests clauses from company contract history.</p>
+                <p className="work-item-desc">One-click clause additions using company's contract history.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Contracts Redlining</span>
                   <span className="work-item-badge">days → hours</span>
                 </div>
-                <p className="work-item-desc">Clause-level diffs with policy deviation alerts.</p>
+                <p className="work-item-desc">Clause-level diffs between versions and policy deviation detection.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Invoice Auto-Harvest</span>
                   <span className="work-item-badge">750+ hrs/day saved</span>
                 </div>
-                <p className="work-item-desc">OCR fallback recovers failed AP extractions.</p>
+                <p className="work-item-desc">Location based OCR fallback recovers failed AP extractions.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />GEP Guru (RAG)</span>
-                  <span className="work-item-badge">−87% search time</span>
+                  <span className="work-item-badge">~87% faster search</span>
                 </div>
-                <p className="work-item-desc">AI doc retrieval for 600+ procurement professionals.</p>
+                <p className="work-item-desc">Internal doc retrieval solution for 600+ professionals.</p>
               </li>
             </ul>
-            <span className="work-link work-link--quiet">Mumbai, India · 2023–24</span>
+            <span className="work-link work-link--quiet">Mumbai, India</span>
           </article>
 
           {/* 03 — GEP Worldwide AI Intern */}
@@ -131,41 +131,41 @@ export default function Work() {
             <ul className="work-items">
               <li className="work-item">
                 <div className="work-item-row">
+                  <span className="work-item-title"><span className="work-item-dot" />Microservices Architecture</span>
+                  <span className="work-item-badge">30% compute cost ↓</span>
+                </div>
+                <p className="work-item-desc">Revamped the pipeline from monolith architecture to 6 microservices.</p>
+              </li>
+              <li className="work-item">
+                <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Invoice Intelligence</span>
-                  <span className="work-item-badge">+65% global reach</span>
+                  <span className="work-item-badge">5K → 16K+ invoices / day</span>
                 </div>
-                <p className="work-item-desc">Expanded extraction to 4 languages, 7 new fields.</p>
+                <p className="work-item-desc">Expanded extraction to 13 languages, and 7 new fields.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
-                  <span className="work-item-title"><span className="work-item-dot" />Microservices</span>
-                  <span className="work-item-badge">5K → 16K+ / day</span>
+                  <span className="work-item-title"><span className="work-item-dot" />Invoice Middle Layer Match</span>
+                  <span className="work-item-badge">~70% → 95%+ precision</span>
                 </div>
-                <p className="work-item-desc">Split monolith; cut compute costs 30%.</p>
+                <p className="work-item-desc">Anomaly detection and master data validation to stop extraction errors.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
-                  <span className="work-item-title"><span className="work-item-dot" />Data Validation</span>
-                  <span className="work-item-badge">95%+ precision</span>
-                </div>
-                <p className="work-item-desc">Anomaly detection stops invoice payment errors.</p>
-              </li>
-              <li className="work-item">
-                <div className="work-item-row">
-                  <span className="work-item-title"><span className="work-item-dot" />Contracts NL Filter</span>
+                  <span className="work-item-title"><span className="work-item-dot" />Interactive Contracts Dashboard</span>
                   <span className="work-item-badge">5 min → 30 sec</span>
                 </div>
-                <p className="work-item-desc">Natural language to live contract DB queries.</p>
+                <p className="work-item-desc">Natural language queries to filter over contract metadata.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Spend Analysis ML</span>
-                  <span className="work-item-badge">M+ lines auto</span>
+                  <span className="work-item-badge">100,000+ items / day classified</span>
                 </div>
-                <p className="work-item-desc">Classifies invoice lines for procurement intel.</p>
+                <p className="work-item-desc">Invoice line items classifier for procurement intelligence.</p>
               </li>
             </ul>
-            <span className="work-link work-link--quiet">Mumbai, India · 2023</span>
+            <span className="work-link work-link--quiet">Mumbai, India</span>
           </article>
 
           {/* 04 — Mukham */}
@@ -181,16 +181,16 @@ export default function Work() {
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Smart Attendance</span>
-                  <span className="work-item-badge">98% accuracy</span>
+                  <span className="work-item-badge">30K+ daily attendance records</span>
                 </div>
-                <p className="work-item-desc">Face + QR + GPS + Wi-Fi; 30K+ daily check-ins.</p>
+                <p className="work-item-desc">Face + QR + GPS + Wi-Fi tracking to get 90%+ accuracy.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />Eligibility Forecast</span>
-                  <span className="work-item-badge">−20% violations</span>
+                  <span className="work-item-badge">~20% violations avoided</span>
                 </div>
-                <p className="work-item-desc">Predicts attendance gaps before they become fails.</p>
+                <p className="work-item-desc">Predicts attendance gaps before they become failures.</p>
               </li>
               <li className="work-item">
                 <div className="work-item-row">
@@ -200,7 +200,7 @@ export default function Work() {
                 <p className="work-item-desc">Legal setup, hiring, and company registration.</p>
               </li>
             </ul>
-            <span className="work-link work-link--quiet">Amaravathi, India · 2022</span>
+            <span className="work-link work-link--quiet">Amaravathi, India</span>
           </article>
 
           {/* 05 — ADOPLE AI */}
@@ -215,31 +215,31 @@ export default function Work() {
             <ul className="work-items">
               <li className="work-item">
                 <div className="work-item-row">
+                  <span className="work-item-title"><span className="work-item-dot" />Stock News Classifier</span>
+                  <span className="work-item-badge">3000+ news labelled daily</span>
+                </div>
+                <p className="work-item-desc">Tags listed company news by ESG category and sentiment score.</p>
+              </li>
+              <li className="work-item">
+                <div className="work-item-row">
+                  <span className="work-item-title"><span className="work-item-dot" />Trade Strategy Simulator</span>
+                  <span className="work-item-badge">30+ strategies support</span>
+                </div>
+                <p className="work-item-desc">Pick a Nifty 500 stock, set rules, get P&L performance results.</p>
+              </li>
+              <li className="work-item">
+                <div className="work-item-row">
                   <span className="work-item-title"><span className="work-item-dot" />10-K Extractor</span>
-                  <span className="work-item-badge">automated</span>
+                  <span className="work-item-badge">hrs of analysis → minutes</span>
                 </div>
-                <p className="work-item-desc">OCR pipeline mines key metrics from SEC filings.</p>
-              </li>
-              <li className="work-item">
-                <div className="work-item-row">
-                  <span className="work-item-title"><span className="work-item-dot" />ESG Classifier</span>
-                  <span className="work-item-badge">auto-labeled</span>
-                </div>
-                <p className="work-item-desc">ML tags business news by ESG category + sentiment.</p>
-              </li>
-              <li className="work-item">
-                <div className="work-item-row">
-                  <span className="work-item-title"><span className="work-item-dot" />Trading Analytics</span>
-                  <span className="work-item-badge">Nifty 500</span>
-                </div>
-                <p className="work-item-desc">Script evaluation with P&L performance insights.</p>
+                <p className="work-item-desc">OCR pipeline to mine key metrics from SEC filings.</p>
               </li>
             </ul>
-            <span className="work-link work-link--quiet">Salem, India · Remote · 2021</span>
+            <span className="work-link work-link--quiet">Salem, India</span>
           </article>
 
           <div className="work-end" aria-hidden="true">
-            <span className="end-label">End of reel</span>
+            <span className="end-label">THAT'S THE WORK</span>
             <span className="end-line" />
             <span className="end-cta">Keep scrolling ↓</span>
           </div>
