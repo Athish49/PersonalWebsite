@@ -27,7 +27,7 @@ export default function Work() {
               <span className="work-num">01</span>
               <span className="work-period">Jun 2025 — Aug 2025</span>
             </header>
-            <div className="work-icon"><img src="/images/book-icon.png" alt="" /></div>
+            <div className="work-icon"><img src="/images/medical-icon.png" alt="" /></div>
             <h3 className="work-name">Wisentel</h3>
             <p className="work-role">AI Engineer Intern</p>
             <ul className="work-items">
@@ -69,7 +69,7 @@ export default function Work() {
               <span className="work-num">02</span>
               <span className="work-period">Jul 2023 — Jun 2024</span>
             </header>
-            <div className="work-icon"><img src="/images/coin-icon.png" alt="" /></div>
+            <div className="work-icon"><img src="/images/supplychain-icon.png" alt="" /></div>
             <h3 className="work-name">GEP Worldwide</h3>
             <p className="work-role">Associate Data Scientist</p>
             <ul className="work-items">
@@ -125,7 +125,7 @@ export default function Work() {
               <span className="work-num">03</span>
               <span className="work-period">Jan 2023 — Jul 2023</span>
             </header>
-            <div className="work-icon"><img src="/images/plane-icon.png" alt="" /></div>
+            <div className="work-icon"><img src="/images/supplychain-icon.png" alt="" /></div>
             <h3 className="work-name">GEP Worldwide</h3>
             <p className="work-role">AI Intern</p>
             <ul className="work-items">
@@ -174,7 +174,7 @@ export default function Work() {
               <span className="work-num">04</span>
               <span className="work-period">Mar 2022 — Aug 2022</span>
             </header>
-            <div className="work-icon"><img src="/images/gameboy-icon.png" alt="" /></div>
+            <div className="work-icon"><img src="/images/faceid-icon.png" alt="" /></div>
             <h3 className="work-name">Mukham</h3>
             <p className="work-role">Founding Engineer</p>
             <ul className="work-items">
@@ -204,12 +204,12 @@ export default function Work() {
           </article>
 
           {/* 05 — ADOPLE AI */}
-          <article className="work-card" style={{ '--accent': '#e9c46a' } as CSSProperties}>
+          <article className="work-card" style={{ '--accent': '#b8860b' } as CSSProperties}>
             <header className="work-card-head">
               <span className="work-num">05</span>
               <span className="work-period">Jul 2021 — Dec 2021</span>
             </header>
-            <div className="work-icon"><img src="/images/coin-icon.png" alt="" /></div>
+            <div className="work-icon"><img src="/images/finance-icon.png" alt="" /></div>
             <h3 className="work-name">ADOPLE AI</h3>
             <p className="work-role">Data Analyst Intern</p>
             <ul className="work-items">

@@ -65,6 +65,7 @@ const PROJECTS: Project[] = [
     url: '#',
     urlLabel: 'projectcitadel.dev',
     bg: 'linear-gradient(145deg, #1a0505 0%, #7f1d1d 60%, #dc2626 100%)',
+    screenshot: '/images/screenshot-projectcitadel.png',
     status: 'building',
   },
   {
@@ -119,7 +120,7 @@ function BrowserMock({ project, size }: { project: Project; size: 'lg' | 'sm' })
           </span>
         )}
       </div>
-      {project.screenshot && !isBuilding ? (
+      {project.screenshot ? (
         <div className="proj-screen proj-screen--shot">
           <img src={project.screenshot} alt={`${project.name} landing page`} />
         </div>
