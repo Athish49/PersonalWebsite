@@ -3,12 +3,13 @@ import { useEffect } from 'react'
 export function useHorizontalScroll() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    // CSS scroll-driven animation (@supports animation-timeline) handles this natively
+    // on Chrome 115+, Firefox 131+, Safari 18+. JS rAF only runs as fallback.
+    if (CSS.supports('animation-timeline: scroll()')) return
 
     const pin = document.querySelector('.work-pin') as HTMLElement | null
     const track = document.querySelector('.work-track') as HTMLElement | null
     if (!pin || !track) return
-
-    const mobileMq = window.matchMedia('(max-width: 900px)')
 
     let totalDistance = 0
 
@@ -21,10 +22,6 @@ export function useHorizontalScroll() {
     window.addEventListener('resize', measure, { passive: true })
 
     const update = () => {
-      if (mobileMq.matches) {
-        track.style.transform = ''
-        return
-      }
       const rect = pin.getBoundingClientRect()
       const viewport = window.innerHeight
       const total = pin.offsetHeight - viewport

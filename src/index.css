@@ -558,6 +558,7 @@ body.loaded .scroll-cue { opacity: 1; }
     padding: 0;
     max-width: none;
     border-top: 1px solid var(--rule);
+    view-timeline: --work-pin-tl block;
 }
 .work-sticky {
     position: sticky;
@@ -574,6 +575,19 @@ body.loaded .scroll-cue { opacity: 1; }
     padding-left: var(--gutter);
     padding-right: var(--gutter);
     will-change: transform;
+}
+
+/* Compositor-threaded horizontal pan — no JS, no rAF lag.
+   For browsers without support the JS fallback in useHorizontalScroll runs instead. */
+@supports (animation-timeline: scroll()) {
+    @keyframes pan-work {
+        to { transform: translate3d(calc(-100% + 100vw), 0, 0); }
+    }
+    .work-track {
+        animation: pan-work linear forwards;
+        animation-timeline: --work-pin-tl;
+        animation-range: contain 0% contain 100%;
+    }
 }
 
 .work-intro {
@@ -1634,35 +1648,36 @@ button:focus:not(:focus-visible) { outline: none; }
     .hero-meta-bottom { grid-template-columns: 1fr; gap: 16px; }
     .scroll-cue { right: 24px; bottom: 20px; }
 
-    .work-pin { height: auto; }
-    .work-sticky {
-        position: relative;
-        height: auto;
-        overflow: visible;
+    /* Work: full-width cards on mobile, same sticky scroll mechanism as desktop */
+    .work-intro {
+        width: calc(100vw - var(--gutter) * 2);
+        padding: 0;
     }
-    .work-track {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 24px;
-        padding: 0 var(--gutter);
-        transform: none !important;
-    }
-    .work-intro { width: 100%; padding: 0; }
     .work-card {
-        width: 100%;
-        height: auto;
-        min-height: 360px;
+        width: calc(100vw - var(--gutter) * 2);
+        height: clamp(460px, 82vh, 640px);
+        min-height: unset;
+        padding: 20px 24px;
     }
     .work-end { display: none; }
+    /* Allow text to wrap in mobile cards */
+    .work-item-desc { white-space: normal; overflow: visible; text-overflow: clip; }
+    .work-item-row { flex-wrap: wrap; }
+    /* Compact icon on mobile */
+    .work-icon { width: 44px; height: 44px; margin-bottom: 16px; border-radius: 10px; }
+    .work-icon img { width: 22px; height: 22px; }
+    .work-card-head { margin-bottom: 16px; }
+    .work-role { margin-bottom: 12px; }
+    .work-link { margin-top: 12px; }
 
     .recog-grid { grid-template-columns: 1fr; }
 
     .life-grid { grid-template-columns: 1fr; gap: 40px; }
-    .life-portrait { max-width: 360px; }
+    .life-portrait { max-width: 360px; aspect-ratio: unset; }
+    .life-portrait img { height: auto; aspect-ratio: 4 / 5; }
 
     .proj-panel { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
-    /* 2 columns on tablet — 4 is too cramped below desktop */
-    .proj-thumbs { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .proj-thumbs { grid-template-columns: 1fr; gap: 16px; }
 
     /* Skills: collapse to 2 columns, all cards equal */
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1694,15 +1709,14 @@ button:focus:not(:focus-visible) { outline: none; }
     .marquee-track { font-size: clamp(1.1rem, 5vw, 1.4rem); padding: 16px 0; }
 
     /* Work */
-    .work-card { min-height: 300px; }
-    .work-item-badge { display: none; }
+    .work-card { height: clamp(440px, 80vh, 600px); min-height: unset; }
 
     /* Recognition */
     .recog-item { grid-template-columns: 56px 1fr; gap: 16px; padding: 20px; }
 
     /* Projects panel */
     .proj-panel { padding: 20px; gap: 20px; }
-    .proj-thumbs { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .proj-thumbs { grid-template-columns: 1fr; gap: 12px; }
     .proj-name { font-size: clamp(1.8rem, 8vw, 2.6rem); }
     .proj-thumb-foot { flex-wrap: wrap; gap: 4px; }
 
