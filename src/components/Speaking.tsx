@@ -25,14 +25,25 @@ const PROJECTS: Project[] = [
     status: 'live',
   },
   {
-    id: 'neuro',
-    name: 'NeuroGraph AI',
+    id: 'precedent',
+    name: 'Precedent',
+    tagline: "End-to-end contract lifecycle management — redlining, playbooks, obligations tracking, and more, all powered by AI agents.",
+    tags: ['AI AGENTS', 'CLM', 'CONTRACT AI'],
+    url: 'https://precedent-prod.vercel.app/',
+    urlLabel: 'precedent-prod.vercel.app',
+    bg: 'linear-gradient(145deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)',
+    screenshot: '/images/screenshot-precedent.png',
+    status: 'live',
+  },
+  {
+    id: 'atlas',
+    name: 'Atlas',
     tagline: "Graph-RAG over Alzheimer's literature — traversing a Neo4j knowledge graph to answer research questions.",
     tags: ['GRAPH RAG', 'NEO4J', 'BIOMEDICAL AI'],
     url: 'https://alzheimerskg.vercel.app/',
     urlLabel: 'alzheimerskg.vercel.app',
     bg: 'linear-gradient(145deg, #2d1b69 0%, #6b21a8 60%, #9333ea 100%)',
-    screenshot: '/images/screenshot-neuro.png',
+    screenshot: '/images/screenshot-atlas.png',
     status: 'live',
   },
   {
@@ -62,11 +73,11 @@ const PROJECTS: Project[] = [
     name: 'ProjectCitadel',
     tagline: "Resilient agentic AI hardened against 77+ attack vectors — prompt injection, RAG poisoning, adversarial inputs, and beyond.",
     tags: ['AGENTIC AI', 'AI SECURITY', 'RED TEAM'],
-    url: '#',
-    urlLabel: 'projectcitadel.dev',
+    url: 'https://project-citadel-prod.vercel.app/',
+    urlLabel: 'project-citadel-prod.vercel.app',
     bg: 'linear-gradient(145deg, #1a0505 0%, #7f1d1d 60%, #dc2626 100%)',
     screenshot: '/images/screenshot-projectcitadel.png',
-    status: 'building',
+    status: 'live',
   },
   {
     id: 'chambers',
@@ -101,11 +112,11 @@ const PROJECTS: Project[] = [
   },
 ]
 
-const INTERVAL_MS = 5000
+const INTERVAL_MS = 10000
 
 function BrowserMock({ project, size }: { project: Project; size: 'lg' | 'sm' }) {
   const isBuilding = project.status === 'building'
-  return (
+  const browser = (
     <div className={`proj-browser proj-browser--${size}`}>
       <div className="proj-chrome">
         <span className="proj-dots"><span /><span /><span /></span>
@@ -132,10 +143,19 @@ function BrowserMock({ project, size }: { project: Project; size: 'lg' | 'sm' })
       )}
     </div>
   )
+  if (size === 'sm') {
+    return <div className="proj-browser-ratio">{browser}</div>
+  }
+  return browser
 }
 
+const LIVE_INDICES = PROJECTS.reduce<number[]>((acc, p, i) => {
+  if (p.status === 'live') acc.push(i)
+  return acc
+}, [])
+
 export default function Speaking() {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(LIVE_INDICES[0] ?? 0)
   const [timerKey, setTimerKey] = useState(0)
 
   const goTo = useCallback((i: number) => {
@@ -146,7 +166,11 @@ export default function Speaking() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setActive(prev => (prev + 1) % PROJECTS.length)
+      setActive(prev => {
+        // Find the next live project after current index, wrapping around
+        const nextIdx = LIVE_INDICES.findIndex(i => i > prev)
+        return nextIdx === -1 ? LIVE_INDICES[0] : LIVE_INDICES[nextIdx]
+      })
     }, INTERVAL_MS)
     return () => clearInterval(id)
   }, [timerKey])

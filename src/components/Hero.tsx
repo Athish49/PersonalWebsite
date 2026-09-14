@@ -1,6 +1,43 @@
+import { useEffect, useRef, useState } from 'react'
+
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const taglineRef = useRef<HTMLParagraphElement>(null)
+  const [photosActive, setPhotosActive] = useState(false)
+
+  useEffect(() => {
+    // Only pointer devices; touch / mobile handled by CSS display:none
+    if (!window.matchMedia('(hover: hover)').matches) return
+
+    const check = (e: MouseEvent) => {
+      const section = sectionRef.current
+      const tagline = taglineRef.current
+      if (!section || !tagline) return
+
+      const { top } = section.getBoundingClientRect()
+      const { bottom } = tagline.getBoundingClientRect()
+
+      // Zone: full viewport width, from top of hero section to bottom of tagline
+      setPhotosActive(e.clientY >= top && e.clientY <= bottom)
+    }
+
+    const hide = () => setPhotosActive(false)
+
+    document.addEventListener('mousemove', check, { passive: true })
+    document.addEventListener('mouseleave', hide)
+
+    return () => {
+      document.removeEventListener('mousemove', check)
+      document.removeEventListener('mouseleave', hide)
+    }
+  }, [])
+
   return (
-    <section className="hero" id="top">
+    <section
+      className={`hero${photosActive ? ' photos-active' : ''}`}
+      id="top"
+      ref={sectionRef}
+    >
       <div className="hero-grid">
         <div className="hero-meta-top">
           <span className="eyebrow">
@@ -39,14 +76,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="hero-tagline">
+        <p className="hero-tagline" ref={taglineRef}>
           <span className="serif italic">To build</span> &amp; <span className="serif italic">to ship</span> &amp; to make AI systems that <span className="serif italic">actually matter</span>.
         </p>
 
         <div className="hero-meta-bottom">
           <div className="hero-role">
             <span className="kicker">Role</span>
-            <span>Agentic AI &amp; RAG Systems</span>
+            <span>Agentic AI &amp; Fullstack Developer</span>
           </div>
           <div className="hero-where">
             <span className="kicker">Where</span>
@@ -54,7 +91,7 @@ export default function Hero() {
           </div>
           <div className="hero-since">
             <span className="kicker">Since</span>
-            <span>2+ yrs in production AI</span>
+            <span>3+ yrs in production AI</span>
           </div>
         </div>
 

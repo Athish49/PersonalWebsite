@@ -380,12 +380,12 @@ section {
 .p-5 { bottom: 0; left:  6%; transform: translate( -90px,  60px) rotate( 10deg) scale(.85); }
 .p-6 { bottom: 4%; right: 6%; transform: translate( 110px,  70px) rotate(-12deg) scale(.85); }
 
-.hero-headline-wrap:hover .p-1 { opacity: 1; transform: translate(0,0) rotate(-9deg)  scale(1); transition-delay: .00s; }
-.hero-headline-wrap:hover .p-2 { opacity: 1; transform: translate(0,0) rotate( 7deg)  scale(1); transition-delay: .07s; }
-.hero-headline-wrap:hover .p-3 { opacity: 1; transform: translate(0,0) rotate(-6deg)  scale(1); transition-delay: .14s; }
-.hero-headline-wrap:hover .p-4 { opacity: 1; transform: translate(0,0) rotate( 8deg)  scale(1); transition-delay: .21s; }
-.hero-headline-wrap:hover .p-5 { opacity: 1; transform: translate(0,0) rotate( 5deg)  scale(1); transition-delay: .28s; }
-.hero-headline-wrap:hover .p-6 { opacity: 1; transform: translate(0,0) rotate(-7deg)  scale(1); transition-delay: .35s; }
+.hero.photos-active .p-1 { opacity: 1; transform: translate(0,0) rotate(-9deg)  scale(1); transition-delay: .00s; }
+.hero.photos-active .p-2 { opacity: 1; transform: translate(0,0) rotate( 7deg)  scale(1); transition-delay: .07s; }
+.hero.photos-active .p-3 { opacity: 1; transform: translate(0,0) rotate(-6deg)  scale(1); transition-delay: .14s; }
+.hero.photos-active .p-4 { opacity: 1; transform: translate(0,0) rotate( 8deg)  scale(1); transition-delay: .21s; }
+.hero.photos-active .p-5 { opacity: 1; transform: translate(0,0) rotate( 5deg)  scale(1); transition-delay: .28s; }
+.hero.photos-active .p-6 { opacity: 1; transform: translate(0,0) rotate(-7deg)  scale(1); transition-delay: .35s; }
 
 @media (max-width: 900px), (hover: none) {
     .hero-name-photos { display: none; }
@@ -393,7 +393,7 @@ section {
 
 @media (prefers-reduced-motion: reduce) {
     .hover-photo { transition: opacity .2s linear !important; transform: none !important; }
-    .hero-headline-wrap:hover .hover-photo { transform: none !important; transition-delay: 0s !important; }
+    .hero.photos-active .hover-photo { transform: none !important; transition-delay: 0s !important; }
 }
 
 .hero-name {
@@ -1067,6 +1067,22 @@ body.loaded .scroll-cue { opacity: 1; }
 .proj-cta-arr { font-size: .8rem; }
 
 /* Browser mock */
+/* Bulletproof 16:9 ratio wrapper for thumbnail browsers.
+   padding-bottom: 56.25% makes height = 9/16 of width regardless of children. */
+.proj-browser-ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.proj-browser-ratio .proj-browser {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .proj-browser {
     border-radius: 12px;
     overflow: hidden;
@@ -1079,7 +1095,7 @@ body.loaded .scroll-cue { opacity: 1; }
 }
 
 .proj-browser--lg { aspect-ratio: 16 / 9; }
-.proj-browser--sm { aspect-ratio: 16 / 9; }
+.proj-browser--sm { aspect-ratio: unset; }
 
 .proj-chrome {
     display: flex;
